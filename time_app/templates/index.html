@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}TaskBunny{% endblock %}</title>
-        <link rel="icon" href="static/img/bunnylogo.png" type="image/icon type">
 
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    </head>
-    
-    <body>
-        <p>hi :D</p>
-    </body>
-    <footer>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}TaskBunny{% endblock %}</title> <!--sets title for html page-->
+    <link rel="icon" href="{{ url_for('static', filename='img/bunnylogo.png') }}" type="image/icon type">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
 
+<body>
+    <header id="header">
+        <a href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='img/bunnylogo.png') }}" alt="Bunny Logo">
+        </a>
+        <ul>
+            <li><a href="{{ url_for('calender') }}">Calendar</a></li>
+            <li><a href="{{ url_for('new_task') }}">New Task</a></li>
+            <li><a href="{{ url_for('settings') }}">Settings</a></li>
+            <li><a href="{{ url_for('feedback') }}">Feedback</a></li>
+        </ul>
+    </header>
+</body>
 
-    </footer>
-
+<footer>
+    <!-- Your footer content here -->
+</footer>
 
 </html>
