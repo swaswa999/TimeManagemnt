@@ -13,9 +13,9 @@
 <body>
     <header id="header">
         <a href="{{ url_for('index') }}">
-            <img src="{{ url_for('static', filename='img/bunnylogo.png') }}" alt="Bunny Logo">
+            <img id="logo" src="{{ url_for('static', filename='img/bunnylogo.png') }}" alt="Bunny Logo">
         </a>
-        <ul>
+        <ul id="list">
             <li><a href="{{ url_for('calender') }}">Calendar</a></li>
             <li><a href="{{ url_for('new_task') }}">New Task</a></li>
             <li><a href="{{ url_for('settings') }}">Settings</a></li>

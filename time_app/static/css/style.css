@@ -1,0 +1,39 @@
+
+body, html{
+    height: 100%;
+    margin: 0;
+    font-family: Helvetica;
+    color: antiquewhite;
+}
+
+
+    #header { /*For the header*/
+        background-color: black;
+
+
+    }
+        #list{
+            list-style-type: none;
+            padding: 20px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        a:hover{
+            color: whitesmoke;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+
+
+
+
+    /* For the bunny logo in the header*/
+        #logo { 
+            width: 50px;
+            width: 50px;
+            margin: 10px;
+        }
