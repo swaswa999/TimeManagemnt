@@ -1,39 +1,51 @@
-
-body, html{
+body, html {
     height: 100%;
     margin: 0;
-    font-family: Helvetica;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     color: antiquewhite;
+    background-color: rgb(15, 15, 15);
 }
 
+#header {
+    background-color: rgb(9, 9, 9);
+    display: flex; /* Use flexbox to align items horizontally */
+    justify-content: space-between; /* Add space between the logo and list */
+    align-items: center; /* Center items vertically */
+    padding: 10px;
+    font-size: 20px;
+    height: 63px;
+}
 
-    #header { /*For the header*/
-        background-color: black;
+#list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 
+#list li {
+    display: inline-block;
+    margin-right: 20px;
+}
 
-    }
-        #list{
-            list-style-type: none;
-            padding: 20px;
-        }
+a {
+    color: inherit;
+    text-decoration: none;
+    
+}
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-        a:hover{
-            color: whitesmoke;
-            text-decoration: underline;
-            cursor: pointer;
-        }
+a:hover {
+    color: whitesmoke;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 21px;
+}
 
-
-
-
-
-    /* For the bunny logo in the header*/
-        #logo { 
-            width: 50px;
-            width: 50px;
-            margin: 10px;
-        }
+#logo {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+#logo:hover{
+    width: 52px;
+    height: 52px;
+}
