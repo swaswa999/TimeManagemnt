@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}TaskBunny{% endblock %}</title> <!--sets title for html page-->
+    <title>{% block title %}TaskBunny{% endblock %}</title> <!--sets title for HTML page-->
     <link rel="icon" href="{{ url_for('static', filename='img/bunnylogo.png') }}" type="image/icon type">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
@@ -22,10 +22,12 @@
             <li><a href="{{ url_for('feedback') }}">Feedback</a></li>
         </ul>
     </header>
-</body>
 
-<footer>
-    <!-- Your footer content here -->
-</footer>
+    <!-- Your main content goes here -->
+
+    <footer id="footer">
+        <p>&copy; 2023 TaskBunny. All rights reserved.</p>
+    </footer>
+</body>
 
 </html>
