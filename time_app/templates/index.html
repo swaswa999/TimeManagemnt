@@ -15,6 +15,7 @@
         <a href="{{ url_for('index') }}">
             <img id="logo" src="{{ url_for('static', filename='img/bunnylogo.png') }}" alt="Bunny Logo">
         </a>
+
         <ul id="list">
             <li><a href="{{ url_for('calender') }}">Calendar</a></li>
             <li><a href="{{ url_for('new_task') }}">New Task</a></li>
@@ -23,7 +24,26 @@
         </ul>
     </header>
 
-    <!-- Your main content goes here -->
+    <main id="main">
+        <section>
+            <h1>Over-view</h1>
+            <p class="maintext">ⓘ {{taskdue}} tasks due today!</p>
+            <p class="maintext">ⓘ {{overdue}} overdue tasks due today!</p>
+        </section>
+
+        <section class="today">
+            <h1>!! Overdue !!</h1>
+            <p class="maintext">ⓘ</p>
+            <p class="maintext">ⓘ</p>
+        </section>
+
+        <section class="today">
+            <h1>!! Today !!</h1>
+            <p class="maintext">ⓘ</p>
+            <p class="maintext">ⓘ</p>
+        </section>
+
+    </main>
 
     <footer id="footer">
         <p>&copy; 2023 TaskBunny. All rights reserved.</p>
