@@ -1,18 +1,20 @@
 import os, random
-from flask import Flask,render_template
+from flask import Flask,render_template, redirect
 
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    overdue = 1
+    taskdue = 1
+    return render_template('index.html', overdue=overdue, taskdue=taskdue)
 
 @app.route('/calender')
 def calender():
     return render_template('calender.html')
 
-@app.route('/newtask')
+@app.route('/newtask', methods=['POST'])
 def new_task():
     return render_template('new_task.html')
 
