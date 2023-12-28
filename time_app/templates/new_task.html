@@ -8,6 +8,7 @@
     <title>{% block title %}TaskBunny{% endblock %}</title> <!--sets title for HTML page-->
     <link rel="icon" href="{{ url_for('static', filename='img/bunnylogo.png') }}" type="image/icon type">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/new_task.css') }}">
 </head>
 
 <body>
@@ -30,6 +31,8 @@
             <label for="task_name">Task Name:</label>
             <input type="text" id="task_name" name="task_name" required>
 
+            <br>
+
             <label for="subject">Subject:</label>
                 <select id="subject" name="subject">
                     <option value="math">Math</option>
@@ -42,12 +45,27 @@
                     <option value="health_education">Health Education</option>
 
                 </select>
-    
-            <label for="task_description">Task Description:</label>
-            <textarea id="task_description" name="task_description" rows="4" required></textarea>
-    
+            
+            <br>
+
+            <label for="priority">Priority Level:</label>
+                <select id="priority" name="priority">
+                    <option value="extrahigh">Extra High (Unit test/final exam)</option>
+                    <option value="high">High (Group assignments/Quizzes)</option>
+                    <option value="medium">Medium (Assignments)</option>
+                    <option value="low">Low (Optional assignments/notes/review)</option>
+                </select>
+            <br> 
             <label for="due_date">Due Date:</label>
             <input type="date" id="due_date" name="due_da`te" required>
+
+            <br>
+
+            <label for="task_description">Task Description:</label>
+            <input type="text" id="task_description" name="task_description" required>
+            
+            <br>
+            <br>
     
             <button type="submit">Submit</button>
         </form>

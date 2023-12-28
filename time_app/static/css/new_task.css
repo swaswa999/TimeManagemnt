@@ -1,0 +1,40 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: antiquewhite;
+    background-color: rgb(15, 15, 15);
+    overflow-x: hidden;
+}
+    main{
+        margin: auto;
+        width: 50%;
+        padding: 10%;
+        text-align: left;
+    }
+
+
+        h1{
+            text-align: center;
+        }
+        form, label{
+            margin: 5px;
+            width: auto;
+
+        }
+        input, option, select, button {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: rgb(15, 15, 15);
+            color: antiquewhite;
+            border: none; 
+            border-bottom: 1px solid antiquewhite;
+            width: auto;
+        }
+
+        input:hover, option:hover, select:hover, button:hover{
+            color: whitesmoke;
+            border-bottom: 1px solid white;
+        }
+        
+
+        
