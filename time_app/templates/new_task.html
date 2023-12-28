@@ -26,9 +26,31 @@
 
     <main>
         <h1>Add a new task</h1>
-        <p style="text-decoration:underline;">Do This after using scraper</p>
+        <form method="post" action="{{ url_for('new_task') }}">
+            <label for="task_name">Task Name:</label>
+            <input type="text" id="task_name" name="task_name" required>
 
+            <label for="subject">Subject:</label>
+                <select id="subject" name="subject">
+                    <option value="math">Math</option>
+                    <option value="science">Science</option>
+                    <option value="english">English</option>
+                    <option value="art">Art</option>
+                    <option value="computer_science">Computer Science</option>
+                    <option value="social_studies_history">Social Studies/History</option>
+                    <option value="foreign_languages">Foreign Languages</option>
+                    <option value="health_education">Health Education</option>
 
+                </select>
+    
+            <label for="task_description">Task Description:</label>
+            <textarea id="task_description" name="task_description" rows="4" required></textarea>
+    
+            <label for="due_date">Due Date:</label>
+            <input type="date" id="due_date" name="due_da`te" required>
+    
+            <button type="submit">Submit</button>
+        </form>
     </main>
 
     <footer id="footer">

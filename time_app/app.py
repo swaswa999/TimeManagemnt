@@ -1,5 +1,5 @@
 import os, random
-from flask import Flask,render_template, redirect
+from flask import Flask,render_template, redirect, request
 
 
 app = Flask(__name__)
@@ -14,10 +14,14 @@ def index():
 def calender():
     return render_template('calender.html')
 
-@app.route('/newtask', methods=['POST'])
+@app.route('/newtask', methods=['GET', 'POST'])
 def new_task():
-    return render_template('new_task.html')
+    if request.method == 'POST':
 
+        print(request.form)
+        return redirect('/')  
+
+    return render_template('new_task.html')
 @app.route('/setting')
 def settings():
     return render_template('settings.html')
