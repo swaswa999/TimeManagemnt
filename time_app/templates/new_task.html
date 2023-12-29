@@ -9,41 +9,7 @@
     <link rel="icon" href="{{ url_for('static', filename='img/bunnylogo.png') }}" type="image/icon type">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/new_task.css') }}">
-
-    <script>
-        
-        function addSubtask() {
-            var subtaskContainer = document.getElementById('subtask-container');
-            var newSubtaskDiv = document.createElement('div');
-
-            newSubtaskDiv.innerHTML = `
-                <br>
-                <label for="subtask">Subtask:</label>
-                <input type="text" name="subtasks[]" required>
-
-                <br>
-
-                <label for="subtask_time">Time to Complete:</label>
-                <input type="text" name="subtask_times[]" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" title="Enter a valid time in HH:MM format" required>
-
-                <br>
-                <br>
-
-                <button type="button" onclick="removeSubtask(this)">Remove</button>
-
-                <br>
-            `;
-
-            subtaskContainer.appendChild(newSubtaskDiv);
-        }
-
-        // JavaScript function to remove a subtask input field
-        function removeSubtask(buttonElement) {
-            var subtaskContainer = document.getElementById('subtask-container');
-            var subtaskDiv = buttonElement.parentElement;
-            subtaskContainer.removeChild(subtaskDiv);
-        }
-    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </head>
 
 <body>
@@ -104,7 +70,7 @@
 
             <br>
 
-            <h2>Subtasks</h2>
+            <h3>Subtasks</h3>
             <button id="button" type="button" onclick="addSubtask()">Add Subtask</button>
             <br>
             <div id="subtask-container"> 
