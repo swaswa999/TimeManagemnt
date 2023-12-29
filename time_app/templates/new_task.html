@@ -9,6 +9,41 @@
     <link rel="icon" href="{{ url_for('static', filename='img/bunnylogo.png') }}" type="image/icon type">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/new_task.css') }}">
+
+    <script>
+        
+        function addSubtask() {
+            var subtaskContainer = document.getElementById('subtask-container');
+            var newSubtaskDiv = document.createElement('div');
+
+            newSubtaskDiv.innerHTML = `
+                <br>
+                <label for="subtask">Subtask:</label>
+                <input type="text" name="subtasks[]" required>
+
+                <br>
+
+                <label for="subtask_time">Time to Complete:</label>
+                <input type="text" name="subtask_times[]" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" title="Enter a valid time in HH:MM format" required>
+
+                <br>
+                <br>
+
+                <button type="button" onclick="removeSubtask(this)">Remove</button>
+
+                <br>
+            `;
+
+            subtaskContainer.appendChild(newSubtaskDiv);
+        }
+
+        // JavaScript function to remove a subtask input field
+        function removeSubtask(buttonElement) {
+            var subtaskContainer = document.getElementById('subtask-container');
+            var subtaskDiv = buttonElement.parentElement;
+            subtaskContainer.removeChild(subtaskDiv);
+        }
+    </script>
 </head>
 
 <body>
@@ -34,39 +69,59 @@
             <br>
 
             <label for="subject">Subject:</label>
-                <select id="subject" name="subject">
-                    <option value="math">Math</option>
-                    <option value="science">Science</option>
-                    <option value="english">English</option>
-                    <option value="art">Art</option>
-                    <option value="computer_science">Computer Science</option>
-                    <option value="social_studies_history">Social Studies/History</option>
-                    <option value="foreign_languages">Foreign Languages</option>
-                    <option value="health_education">Health Education</option>
+            <select id="subject" name="subject">
+                <option value="blank"> </option>
+                <option value="math">Math</option>
+                <option value="science">Science</option>
+                <option value="english">English</option>
+                <option value="art">Art</option>
+                <option value="computer_science">Computer Science</option>
+                <option value="social_studies_history">Social Studies/History</option>
+                <option value="foreign_languages">Foreign Languages</option>
+                <option value="health_education">Health Education</option>
+            </select>
 
-                </select>
-            
             <br>
 
             <label for="priority">Priority Level:</label>
-                <select id="priority" name="priority">
-                    <option value="extrahigh">Extra High (Unit test/final exam)</option>
-                    <option value="high">High (Group assignments/Quizzes)</option>
-                    <option value="medium">Medium (Assignments)</option>
-                    <option value="low">Low (Optional assignments/notes/review)</option>
-                </select>
+            <select id="priority" name="priority">
+                <option value="blank"> </option>
+                <option value="extrahigh">Extra High (Unit test/final exam)</option>
+                <option value="high">High (Group assignments/Quizzes)</option>
+                <option value="medium">Medium (Assignments)</option>
+                <option value="low">Low (Optional assignments/notes/review)</option>
+            </select>
+
             <br> 
+
             <label for="due_date">Due Date:</label>
-            <input type="date" id="due_date" name="due_da`te" required>
+            <input type="date" id="due_date" name="due_date" required>
 
             <br>
 
             <label for="task_description">Task Description:</label>
             <input type="text" id="task_description" name="task_description" required>
-            
+
             <br>
+
+            <h2>Subtasks</h2>
+            <button id="button" type="button" onclick="addSubtask()">Add Subtask</button>
             <br>
-    
+            <div id="subtask-container"> 
+
+                <div>
+                    <label for="subtask">Subtask:</label>
+                    <input type="text" name="subtasks[]">
+                    <br>
+                    <label for="subtask_time">Time to Complete:</label>
+                    <input type="text" name="subtask_times[]" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" title="Enter a valid time in HH:MM format">
+                    <br>
+                </div>
+            </div>
+
+
+            <br>
+
             <button type="submit">Submit</button>
         </form>
     </main>
