@@ -37,6 +37,7 @@
             <label for="subject">Subject:</label>
             <select id="subject" name="subject">
                 <option value="blank"> </option>
+                <option value="administrative">Administrative</option>
                 <option value="math">Math</option>
                 <option value="science">Science</option>
                 <option value="english">English</option>
@@ -60,15 +61,23 @@
 
             <br> 
 
-            <label for="due_date">Due Date:</label>
-            <input type="date" id="due_date" name="due_date" required>
-
-            <br>
-
             <label for="task_description">Task Description:</label>
             <input type="text" id="task_description" name="task_description" required>
 
             <br>
+
+            <label for="repete_checkbox">Do you want to repeat?</label>
+            <div>
+                <input type="radio" id="repeat_yes" name="repeat" value="yes" onclick="addDate()" required>
+
+                <label for="repeat_yes">Yes</label>
+
+                <input type="radio" id="repeat_no" name="repeat" value="no" onclick="addDate()" required>
+                <label for="repeat_no">No</label>
+            </div>
+
+            <br>
+            
 
             <h3>Subtasks</h3>
             <button id="button" type="button" onclick="addSubtask()">Add Subtask</button>
@@ -79,8 +88,9 @@
                     <label for="subtask">Subtask:</label>
                     <input type="text" name="subtasks[]">
                     <br>
-                    <label for="subtask_time">Time to Complete:</label>
-                    <input type="text" name="subtask_times[]" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" title="Enter a valid time in HH:MM format">
+                    <label for="subtask_time">When to Complete by:</label>
+                    <input type="date" name="due_date[]">
+                
                     <br>
                 </div>
             </div>

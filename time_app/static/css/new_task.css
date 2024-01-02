@@ -33,6 +33,8 @@ body, html {
             font-size:medium;
         }
 
+        
+
         input:hover, option:hover, select:hover, button:hover{
             color: whitesmoke;
             border-bottom: 1px solid white;

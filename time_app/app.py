@@ -10,22 +10,25 @@ def index():
     today = date.today().strftime('%Y-%d-%m')
     today_task = []
     overdue_task = []
+    daily_tasks = []
 
     with open('time_app/data/swayam.txt', 'r') as file:
         lines = file.readlines()
 
     for i in range(len(lines)):
         current_line = lines[i].strip().split('_')
-        if current_line[2] == today:
+        if current_line[11] == 'yes':
+            daily_tasks.append(f"{current_line[6]}")
+        elif current_line[2] == today:
             today_task.append(current_line[6])
-        if current_line[2] < today:
+        elif current_line[2] < today:
             overdue_task.append(f"{current_line[6]} [{current_line[2]}]")
-        
 
 
     overdue = len(overdue_task)
     taskdue = len(today_task)
-    return render_template('index.html', overdue=overdue, taskdue=taskdue, today_task=today_task, overdue_task=overdue_task)
+    daily = len(daily_tasks)
+    return render_template('index.html', overdue=overdue, taskdue=taskdue, daily=daily, today_task=today_task, overdue_task=overdue_task)
 
 @app.route('/calender')
 def calender():
@@ -40,6 +43,8 @@ def new_task():
         task = request.form.get('task_name')
         date_added = current_date.strftime('%Y-%d-%m') #sets current date in yyyy/dd/mm
         date_due = request.form.get('due_date')
+        if date_due == None or date_due == "":
+            date_due = None
         subject = request.form.get('subject')
         priority = request.form.get('priority') #scale of 1-3
         location_added = 'manual' #when redoing scraper, indicates to not change this task
@@ -47,10 +52,10 @@ def new_task():
         subtasks = request.form.getlist('subtasks[]')  # Get a list of subtasks
         subtask_times = request.form.getlist('subtask_times[]')  # Get a list of subtask times
         status = 'not_complete' #shows that its a fresh task 
-        repeating = request.form.get('')
+        repeating = request.form.get('repeat')
 
         with open('time_app/data/swayam.txt', 'a') as file:
-            file.write(f"{task}_{date_added}_{date_due}_{subject}_{priority}_{location_added}_{description}_{subtasks}_{subtask_times}_{status}_{repeating} \n")
+            file.write(f"{task}_{date_added}_{date_due}_{subject}_{priority}_{location_added}_{description}_{subtasks}_{subtask_times}_{status}_{repeating}\n")
 
         return redirect('/')  
 

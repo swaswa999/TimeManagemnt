@@ -29,15 +29,17 @@
             <h1>Over-view</h1>
             <p class="maintext">ⓘ {{taskdue}} tasks due today!</p>
             <p class="maintext">ⓘ {{overdue}} overdue tasks due today!</p>
+            <p class="maintext">ⓘ {{daily}} daily tasks due today!</p>
         </section>
 
-
-        <section class="today">
-            <h1>!! Daily !!</h1>
-            {% for i in daily_task%}
-                <p class="maintext">ⓘ{{ i }}</p>
-            {%endfor%}
-        </section>
+        {% if daily > 0 %}
+            <section class="today">
+                <h1>!! Daily !!</h1>
+                {% for y in daily_tasks%}
+                    <p class="maintext">ⓘ{{ y }}</p>
+                {%endfor%}
+            </section>
+        {% endif %}
 
         {% if overdue > 0 %} <!--This is done using jinja-->
             <section class="today">
