@@ -30,21 +30,33 @@
             <p class="maintext">ⓘ {{taskdue}} tasks due today!</p>
             <p class="maintext">ⓘ {{overdue}} overdue tasks due today!</p>
         </section>
-        {% if overdue > 0 %}
+
+
+        <section class="today">
+            <h1>!! Daily !!</h1>
+            {% for i in daily_task%}
+                <p class="maintext">ⓘ{{ i }}</p>
+            {%endfor%}
+        </section>
+
+        {% if overdue > 0 %} <!--This is done using jinja-->
             <section class="today">
                 <h1>!! Overdue !!</h1>
-                <p class="maintext">ⓘ</p>
-                <p class="maintext">ⓘ</p>
+                {% for j in overdue_task%}
+                <p class="maintext">ⓘ{{ j }}</p>
+                {%endfor%}
             </section>
         {% endif %}
 
         {% if taskdue > 0 %}
             <section class="today">
                 <h1>!! Today !!</h1>
-                <p class="maintext">ⓘ</p>
-                <p class="maintext">ⓘ</p>
+                {% for i in today_task%}
+                    <p class="maintext">ⓘ{{i}}</p>
+                {%endfor%}
             </section>
         {% endif %}
+        
 
         {% if taskdue == 0%}
             {% if overdue == 0%}
