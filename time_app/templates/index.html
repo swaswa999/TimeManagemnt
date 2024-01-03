@@ -36,7 +36,7 @@
             <section class="today">
                 <h1>!! Daily !!</h1>
                 {% for y in daily_tasks%}
-                    <p class="maintext">ⓘ{{ y }}</p>
+                    <p class="maintext">ⓘ {{ y }}</p>
                 {%endfor%}
             </section>
         {% endif %}
@@ -45,7 +45,7 @@
             <section class="today">
                 <h1>!! Overdue !!</h1>
                 {% for j in overdue_task%}
-                <p class="maintext">ⓘ{{ j }}</p>
+                <p class="maintext"> ⓘ{{ j }}</p>
                 {%endfor%}
             </section>
         {% endif %}
@@ -54,7 +54,7 @@
             <section class="today">
                 <h1>!! Today !!</h1>
                 {% for i in today_task%}
-                    <p class="maintext">ⓘ{{i}}</p>
+                    <p class="maintext"> ⓘ{{i}}</p>
                 {%endfor%}
             </section>
         {% endif %}

@@ -8,6 +8,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     today = date.today().strftime('%Y-%d-%m')
+
     today_task = []
     overdue_task = []
     daily_tasks = []
@@ -17,18 +18,20 @@ def index():
 
     for i in range(len(lines)):
         current_line = lines[i].strip().split('_')
-        if current_line[11] == 'yes':
-            daily_tasks.append(f"{current_line[6]}")
-        elif current_line[2] == today:
+
+
+        if current_line[11] == 'yes' and current_line[2] == ' ':
+            daily_tasks.append(f"{current_line[6]}") 
+        elif current_line[11] == 'no' and current_line[2] == today:
             today_task.append(current_line[6])
-        elif current_line[2] < today:
+        elif current_line[11] == 'no' and current_line[2] < today:
             overdue_task.append(f"{current_line[6]} [{current_line[2]}]")
 
 
     overdue = len(overdue_task)
     taskdue = len(today_task)
     daily = len(daily_tasks)
-    return render_template('index.html', overdue=overdue, taskdue=taskdue, daily=daily, today_task=today_task, overdue_task=overdue_task)
+    return render_template('index.html', overdue=overdue, taskdue=taskdue, daily=daily, today_task=today_task, overdue_task=overdue_task, daily_tasks=daily_tasks)
 
 @app.route('/calender')
 def calender():
@@ -44,7 +47,7 @@ def new_task():
         date_added = current_date.strftime('%Y-%d-%m') #sets current date in yyyy/dd/mm
         date_due = request.form.get('due_date')
         if date_due == None or date_due == "":
-            date_due = None
+            date_due = ' '
         subject = request.form.get('subject')
         priority = request.form.get('priority') #scale of 1-3
         location_added = 'manual' #when redoing scraper, indicates to not change this task
