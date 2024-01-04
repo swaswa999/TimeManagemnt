@@ -13,20 +13,35 @@ def index():
     overdue_task = []
     daily_tasks = []
 
+    sub_taskcat = []
+    sub_tasktime = []
+
+
+
     with open('time_app/data/swayam.txt', 'r') as file:
         lines = file.readlines()
 
     for i in range(len(lines)):
         current_line = lines[i].strip().split('_')
 
-
-        if current_line[11] == 'yes' and current_line[2] == ' ':
+        if current_line[10] == 'yes' and current_line[2] == ' ':
             daily_tasks.append(f"{current_line[6]}") 
-        elif current_line[11] == 'no' and current_line[2] == today:
+        elif current_line[10] == 'no' and current_line[2] == today:
             today_task.append(current_line[6])
-        elif current_line[11] == 'no' and current_line[2] < today:
+        elif current_line[10] == 'no' and current_line[2] < today:
             overdue_task.append(f"{current_line[6]} [{current_line[2]}]")
 
+        sub_taskcat.append(current_line[7].strip("['']"))
+        sub_tasktime.append(current_line[8].strip("['']"))
+
+        sub_taskcat = [item for item in sub_taskcat if item != '']
+        sub_tasktime = [item2 for item2 in sub_tasktime if item2 != '']
+
+    for k in range(len(sub_taskcat)):
+        if current_line[10] == 'no' and sub_tasktime[k] == today:
+            today_task.append(f"{sub_taskcat[k]}")
+        elif current_line[10] == 'no' and sub_tasktime[k] < today:
+            overdue_task.append(f"{sub_taskcat[k]} [{sub_tasktime[k]}]")
 
     overdue = len(overdue_task)
     taskdue = len(today_task)
@@ -53,8 +68,8 @@ def new_task():
         location_added = 'manual' #when redoing scraper, indicates to not change this task
         description = request.form.get('task_description')
         subtasks = request.form.getlist('subtasks[]')  # Get a list of subtasks
-        subtask_times = request.form.getlist('subtask_times[]')  # Get a list of subtask times
-        status = 'not_complete' #shows that its a fresh task 
+        subtask_times = request.form.getlist('due_date[]')  # Get a list of subtask times
+        status = 'not-complete' #shows that its a fresh task 
         repeating = request.form.get('repeat')
 
         with open('time_app/data/swayam.txt', 'a') as file:
