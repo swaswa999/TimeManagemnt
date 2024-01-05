@@ -1,5 +1,5 @@
 import os, random
-from datetime import date
+from datetime import date, datetime
 from flask import Flask,render_template, redirect, request
 
 app = Flask(__name__)
@@ -7,14 +7,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    today = date.today().strftime('%Y-%d-%m')
+    today = date.today()
 
     today_task = []
     overdue_task = []
     daily_tasks = []
-
-    sub_taskcat = []
-    sub_tasktime = []
 
 
 
@@ -24,24 +21,23 @@ def index():
     for i in range(len(lines)):
         current_line = lines[i].strip().split('_')
 
-        if current_line[10] == 'yes' and current_line[2] == ' ':
-            daily_tasks.append(f"{current_line[6]}") 
-        elif current_line[10] == 'no' and current_line[2] == today:
-            today_task.append(current_line[6])
-        elif current_line[10] == 'no' and current_line[2] < today:
-            overdue_task.append(f"{current_line[6]} [{current_line[2]}]")
+        # Check if the date string is not empty or just spaces
+        if current_line[2] == " ":
 
-        sub_taskcat.append(current_line[7].strip("['']"))
-        sub_tasktime.append(current_line[8].strip("['']"))
+            if current_line[10] == 'yes':
+                daily_tasks.append(f"{current_line[6]}")
+        else:
+            date_from_current_line = datetime.strptime(current_line[2], '%Y-%m-%d').date()
 
-        sub_taskcat = [item for item in sub_taskcat if item != '']
-        sub_tasktime = [item2 for item2 in sub_tasktime if item2 != '']
+            if current_line[10] == 'no' and date_from_current_line == today:
+                today_task.append(current_line[6])
+            elif current_line[10] == 'no' and date_from_current_line < today:
+                overdue_task.append(f"{current_line[6]} [{current_line[2]}]")
+                
+        if current_line[7] != "['']":
+            current_sub_task = current_line[7]
 
-    for k in range(len(sub_taskcat)):
-        if current_line[10] == 'no' and sub_tasktime[k] == today:
-            today_task.append(f"{sub_taskcat[k]}")
-        elif current_line[10] == 'no' and sub_tasktime[k] < today:
-            overdue_task.append(f"{sub_taskcat[k]} [{sub_tasktime[k]}]")
+
 
     overdue = len(overdue_task)
     taskdue = len(today_task)
@@ -59,10 +55,10 @@ def new_task():
         current_date = date.today()
 
         task = request.form.get('task_name')
-        date_added = current_date.strftime('%Y-%d-%m') #sets current date in yyyy/dd/mm
+        date_added = current_date  #sets current date in yyyy/dd/mm
         date_due = request.form.get('due_date')
         if date_due == None or date_due == "":
-            date_due = ' '
+            date_due = ''
         subject = request.form.get('subject')
         priority = request.form.get('priority') #scale of 1-3
         location_added = 'manual' #when redoing scraper, indicates to not change this task
@@ -73,7 +69,7 @@ def new_task():
         repeating = request.form.get('repeat')
 
         with open('time_app/data/swayam.txt', 'a') as file:
-            file.write(f"{task}_{date_added}_{date_due}_{subject}_{priority}_{location_added}_{description}_{subtasks}_{subtask_times}_{status}_{repeating}\n")
+            file.write(f"\n{task}_{date_added}_{date_due}_{subject}_{priority}_{location_added}_{description}_{subtasks}_{subtask_times}_{status}_{repeating}")
 
         return redirect('/')  
 
