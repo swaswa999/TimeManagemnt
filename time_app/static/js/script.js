@@ -56,3 +56,4 @@ function addDate() {
     // Toggle the flag
     isDueDateVisible = !isDueDateVisible;
 }
+

@@ -12,11 +12,6 @@ body, html {
         padding: 10%;
         text-align: left;
     }
-
-
-        h1{
-            text-align: center;
-        }
         form, label{
             margin: 5px;
             width: auto;
@@ -44,5 +39,9 @@ body, html {
             display: flex;
         }
         
+        label, div {
+            display: inline-block;
+            vertical-align: middle; /* Optional: Align elements vertically */
+        }
 
-        
+            

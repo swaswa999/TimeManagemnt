@@ -4,28 +4,8 @@ create timeline_2024-01-02_2024-02-01_administrative_low_manual_Create a timelin
 DreamBox _2024-01-04_ _math_medium_manual_Do DreamBox daily_['']_[]_not-complete_yes
 Email _2024-01-04_2024-01-03_administrative_extrahigh_manual_Email teacher_['']_[]_not-complete_no
 sort emails_2024-01-04_2024-01-04_administrative_low_manual_Sort all emails from january_['sort swayams@iclould.com', 'sort swayamshrimali@gmail.com']_['2024-01-03', '2024-01-01']_not-complete_no
-Task1_2024-01-03_ _subject1_medium_manual_Description1_['Subtask1', 'Subtask2']_['2023-12-31', '2024-01-02']_not-complete_yes
-Task2_2024-01-02_2024-01-03_subject2_extrahigh_manual_Description2_['Subtask1', 'Subtask2']_['2024-01-01', '2023-12-30']_not-complete_no
-Task3_2024-01-01_2024-01-02_subject3_low_manual_Description3_['Subtask1', 'Subtask2']_['2024-01-03', '2023-12-31']_not-complete_no
-Task4_2024-01-03_ _subject4_medium_manual_Description4_['Subtask1', 'Subtask2']_['2024-01-01', '2024-01-02']_not-complete_yes
-Task5_2024-01-02_2024-01-03_subject5_extrahigh_manual_Description5_['Subtask1', 'Subtask2']_['2023-12-30', '2024-01-01']_not-complete_no
-Task6_2024-01-01_2024-01-02_subject6_low_manual_Description6_['Subtask1', 'Subtask2']_['2023-12-31', '2024-01-03']_not-complete_no
-Task7_2024-01-03_ _subject7_medium_manual_Description7_['Subtask1', 'Subtask2']_['2024-01-01', '2024-01-02']_not-complete_yes
-Task8_2024-01-02_2024-01-03_subject8_extrahigh_manual_Description8_['Subtask1', 'Subtask2']_['2023-12-30', '2024-01-01']_not-complete_no
-Task9_2024-01-01_2024-01-02_subject9_low_manual_Description9_['Subtask1', 'Subtask2']_['2023-12-31', '2024-01-03']_not-complete_no
-Task10_2024-01-03_ _subject10_medium_manual_Description10_['Subtask1', 'Subtask2']_['2024-01-01', '2024-01-02']_not-complete_yes
-Task11_2024-01-02_2024-01-03_subject11_extrahigh_manual_Description11_['Subtask1', 'Subtask2']_['2023-12-30', '2024-01-01']_not-complete_no
-Task12_2024-01-01_2024-01-02_subject12_low_manual_Description12_['Subtask1', 'Subtask2']_['2023-12-31', '2024-01-03']_not-complete_no
-Task13_2024-01-03_ _subject13_medium_manual_Description13_['Subtask1', 'Subtask2']_['2024-01-01', '2024-01-02']_not-complete_yes
-Task14_2024-01-02_2024-01-03_subject14_extrahigh_manual_Description14_['Subtask1', 'Subtask2']_['2023-12-30', '2024-01-01']_not-complete_no
-Task15_2024-01-01_2024-01-02_subject15_low_manual_Description15_['Subtask1', 'Subtask2']_['2023-12-31', '2024-01-03']_not-complete_no
-Task16_2024-01-03_ _subject16_medium_manual_Description16_['Subtask1', 'Subtask2']_['2024-01-01', '2024-01-02']_not-complete_yes
-Task17_2024-01-02_2024-01-03_subject17_extrahigh_manual_Description17_['Subtask1', 'Subtask2']_['2023-12-30', '2024-01-01']_not-complete_no
-Task18_2024-01-01_2024-01-02_subject18_low_manual_Description18_['Subtask1', 'Subtask2']_['2023-12-31', '2024-01-03']_not-complete_no
-Task19_2024-01-03_ _subject19_medium_manual_Description19_['Subtask1', 'Subtask2']_['2024-01-01', '2024-01-02']_not-complete_yes
-Task20_2024-01-02_2024-01-03_subject20_extrahigh_manual_Description20_['Subtask1', 'Subtask2']_['2023-12-30', '2024-01-01']_not-complete_no
-Task21_2024-01-04_ _subject21_medium_manual_Description21_['Subtask1', 'Subtask2']_['2024-01-04', '2024-01-04']_not-complete_yes
-Task22_2024-01-04_2024-01-04_subject22_extrahigh_manual_Description22_['Subtask1', 'Subtask2']_['2024-01-04', '2024-01-04']_not-complete_no
-Task23_2024-01-04_ _subject23_low_manual_Description23_['Subtask1', 'Subtask2']_['2024-01-04', '2024-01-04']_not-complete_no
-Task24_2024-01-04_2024-01-04_subject24_medium_manual_Description24_['Subtask1', 'Subtask2']_['2024-01-04', '2024-01-04']_not-complete_yes
-Task25_2024-01-04_ _subject25_extrahigh_manual_Description25_['Subtask1', 'Subtask2']_['2024-01-04', '2024-01-04']_not-complete_no
+Coding _2024-01-05__computer-science_low_manual_Do 100 days of coding _['']_['']_not-complete_yes
+Coding _2024-01-05__computer-science_low_manual_Do 100 days of coding _['']_['']_not-complete_yes
+Multiplication _2024-01-05_2024-01-08_math_low_manual_Do Multiplication _['']_['']_not-complete_no
+Dennis _2024-01-05__administrative_low_manual_Call Dennis on tv time _['']_['']_not-complete_yes
+Papa_2024-01-05__administrative_extrahigh_manual_Spend time with papa_['Play with papa games ']_['']_not-complete_yes

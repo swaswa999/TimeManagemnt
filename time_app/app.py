@@ -22,7 +22,7 @@ def index():
         current_line = lines[i].strip().split('_')
 
         # Check if the date string is not empty or just spaces
-        if current_line[2] == " ":
+        if current_line[2] == "" or current_line[2] == ' ':
 
             if current_line[10] == 'yes':
                 daily_tasks.append(f"{current_line[6]}")
