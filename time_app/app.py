@@ -3,8 +3,6 @@ from datetime import date, datetime
 from flask import Flask,render_template, redirect, request
 
 app = Flask(__name__)
-
-
 @app.route('/')
 def index():
     today = date.today()
@@ -12,6 +10,7 @@ def index():
     today_task = []
     overdue_task = []
     daily_tasks = []
+    future_task = []
 
 
 
@@ -26,6 +25,7 @@ def index():
 
             if current_line[10] == 'yes':
                 daily_tasks.append(f"{current_line[6]}")
+
         else:
             date_from_current_line = datetime.strptime(current_line[2], '%Y-%m-%d').date()
 
@@ -33,7 +33,9 @@ def index():
                 today_task.append(current_line[6])
             elif current_line[10] == 'no' and date_from_current_line < today:
                 overdue_task.append(f"{current_line[6]} [{current_line[2]}]")
-                
+            elif current_line[10] == 'no' and date_from_current_line > today:
+                future_task.append(f"{current_line[6]} [{current_line[2]}]")
+
         if current_line[7] != "['']":
             current_sub_task = current_line[7]
 
@@ -42,7 +44,8 @@ def index():
     overdue = len(overdue_task)
     taskdue = len(today_task)
     daily = len(daily_tasks)
-    return render_template('index.html', overdue=overdue, taskdue=taskdue, daily=daily, today_task=today_task, overdue_task=overdue_task, daily_tasks=daily_tasks)
+    future = len(future_task)
+    return render_template('index.html', overdue=overdue, taskdue=taskdue, daily=daily, today_task=today_task, overdue_task=overdue_task, daily_tasks=daily_tasks, future_task=future_task, future=future)
 
 @app.route('/calender')
 def calender():

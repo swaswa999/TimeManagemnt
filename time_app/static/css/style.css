@@ -23,6 +23,11 @@ body, html {
             margin: 0;
         }
 
+        #taskcheckbox{
+            visibility: hidden;
+        }
+        #taskcheckbox:cli
+
         #list li {
             display: inline-block;
             margin-right: 20px;
@@ -31,7 +36,6 @@ body, html {
         a {
             color: inherit;
             text-decoration: none;
-            
         }
 
         a:hover {

@@ -1,11 +1,6 @@
-Essay_2024-01-01_ _english_medium_manual_Write essay for english poem_['Write essay', 'Edit', 'Peer edit']_['2024-01-03', '2025-12-25', '2024-01-03']_not-complete_yes
-e-mail teacher _2024-01-01_2023-08-21_computer-science_extrahigh_manual_email each teacher a happy new year :D_['remember to email teacher before jan']_['2023-01-02']_not-complete_no
-create timeline_2024-01-02_2024-02-01_administrative_low_manual_Create a timeline for profits _['']_['']_not-complete_no
-DreamBox _2024-01-04_ _math_medium_manual_Do DreamBox daily_['']_[]_not-complete_yes
-Email _2024-01-04_2024-01-03_administrative_extrahigh_manual_Email teacher_['']_[]_not-complete_no
-sort emails_2024-01-04_2024-01-04_administrative_low_manual_Sort all emails from january_['sort swayams@iclould.com', 'sort swayamshrimali@gmail.com']_['2024-01-03', '2024-01-01']_not-complete_no
-Coding _2024-01-05__computer-science_low_manual_Do 100 days of coding _['']_['']_not-complete_yes
-Coding _2024-01-05__computer-science_low_manual_Do 100 days of coding _['']_['']_not-complete_yes
-Multiplication _2024-01-05_2024-01-08_math_low_manual_Do Multiplication _['']_['']_not-complete_no
-Dennis _2024-01-05__administrative_low_manual_Call Dennis on tv time _['']_['']_not-complete_yes
-Papa_2024-01-05__administrative_extrahigh_manual_Spend time with papa_['Play with papa games ']_['']_not-complete_yes
+Communism and Democracy Graphic Organizer_2024-01-11_2024-01-15_social-studies-history_blank_manual_Finish history Communism and Democracy Graphic Organizer_['']_['']_not-complete_no
+Cow Drawing_2024-01-11_2024-01-11_computer-science_medium_manual_Create a cow drawing using JAVA_['']_['']_not-complete_no
+History Video Questioner_2024-01-11_2024-01-14_computer-science_blank_manual_Re-do History Video Questioner_['']_['']_not-complete_no
+Communism and Democracy Graphic Organizer_2024-01-21_2024-01-01_math_extrahigh_manual_Finish history Communism and Democracy Graphic Organizer_['']_['']_not-complete_no
+Communism and Democracy Graphic Organizer_2024-01-21_2024-01-21_administrative_high_manual_Create a cow drawing using JAVA_['']_['']_not-complete_no
+Communism and Democracy Graphic Organizer_2024-01-21__math_high_manual_Finish history Communism and Democracy Graphic Organizer_['']_['']_not-complete_yes

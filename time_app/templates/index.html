@@ -32,43 +32,56 @@
             <p class="maintext">ⓘ {{daily}} daily tasks due today!</p>
         </section>
 
-        {% if daily > 0 %}
-            <section class="today">
-                <h1>!! Daily !!</h1>
-                {% for y in daily_tasks%}
-                    <p class="maintext">ⓘ {{ y }}</p>
-                {%endfor%}
-            </section>
-        {% endif %}
-
-        {% if overdue > 0 %} <!--This is done using jinja-->
-            <section class="today">
-                <h1>!! Overdue !!</h1>
-                {% for j in overdue_task%}
-                <p class="maintext"> ⓘ{{ j }}</p>
-                {%endfor%}
-            </section>
-        {% endif %}
-
-
-        {% if taskdue > 0 %}
-            <section class="today">
-                <h1>!! Today !!</h1>
-                {% for i in today_task%}
-                    <p class="maintext"> ⓘ{{i}}</p>
-                {%endfor%}
-            </section>
-        {% endif %}
-        
-
-        {% if taskdue == 0%}
-            {% if overdue == 0%}
+        <form>
+            {% if daily > 0 %}
                 <section class="today">
-                    <h1> ALL DONE :D</h1>
+                    <h1>!! Daily !!</h1>
+                    {% for y in daily_tasks%}
+                        <input type="checkbox" id="taskcheckbox" name="daily" value={{y}}>
+                        <label for="daily" class="maintext">ⓘ {{ y }}</label><br>
+                    {%endfor%}
                 </section>
             {% endif %}
-        {% endif %}
-            
+
+            {% if overdue > 0 %} <!--This is done using jinja-->
+                <section class="today">
+                    <h1>!! Overdue !!</h1>
+                    {% for j in overdue_task%}
+                    <p class="maintext"> ⓘ{{ j }}</p>
+                    {%endfor%}
+                </section>
+            {% endif %}
+
+
+            {% if taskdue > 0 %}
+                <section class="today">
+                    <h1>!! Today !!</h1>
+                    {% for i in today_task%}
+                        <p class="maintext"> ⓘ{{i}}</p>
+                    {%endfor%}
+                </section>
+            {% endif %}
+
+            {% if taskdue == 0%}
+                {% if overdue == 0%}
+                    <section class="today">
+                        <h1> ALL DONE :D</h1>
+                        <p class="maintext"> You could work on future stuff?</p>
+                    </section>
+                {% endif %}
+            {% endif %}
+
+            {% if future > 0 %}
+            <section class="today">
+                <h1>!! UPCOMMING !!</h1>
+                {% for l in future_task%}
+                    <p class="maintext"> ⓘ{{l}}</p>
+                {%endfor%}
+            </section>
+            {% endif %}
+        </form>
+
+
     </main>
 
     <footer id="footer">
